@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- SEO Meta Tags -->
+    <title>
+      Dasturlashni 0 dan o'rganish - Javohir Berdiyev bilan Bepul Webinar
+    </title>
+    <meta
+      name="description"
+      content="Dasturlashni 0 dan o'rganish, soha tanlash va daromadgacha chiqish yo'llarini bilib oling. Javohir Berdiyev bilan bepul webinar. $200 qiymatga ega sovg'a."
+    />
+    <meta
+      name="keywords"
+      content="dasturlash, programming, webinar, Javohir Berdiyev, IT, web development, dasturlash o'rganish"
+    />
+    <meta name="author" content="Javohir Berdiyev" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="Dasturlashni 0 dan o'rganish - Javohir Berdiyev bilan Bepul Webinar"
+    />
+    <meta
+      property="og:description"
+      content="Dasturlashni 0 dan o'rganish, soha tanlash va daromadgacha chiqish yo'llarini bilib oling. Javohir Berdiyev bilan bepul webinar. $200 qiymatga ega sovg'a."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uz_UZ" />
+    <meta property="og:site_name" content="Javohir Berdiyev Webinar" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Dasturlashni 0 dan o'rganish - Javohir Berdiyev bilan Bepul Webinar"
+    />
+    <meta
+      name="twitter:description"
+      content="Dasturlashni 0 dan o'rganish, soha tanlash va daromadgacha chiqish yo'llarini bilib oling. Javohir Berdiyev bilan bepul webinar."
+    />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Staatliches:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="webinar-date">
+          <div class="webinar-date-title">Boshlanish vaqti</div>
+          <time class="webinar-date-date" datetime="2024-07-21T20:30:00+05:00"
+            >11-12-Avgust<br />Soat 20:30</time
+          >
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <div class="content-wrapper">
+          <div class="content-left">
+            <h1 class="main-title">
+              DASTURLASHDA 0 DAN<br />
+              <span class="highlight">NATIJAGACHA</span>
+            </h1>
+
+        
+            <button class="cta-button" onclick="openModal()">
+              JOY BAND QILISH
+            </button>
+
+            <div class="price-info">
+              <span class="old-price">200.000 so'm</span>
+              <span class="new-price">BEPUL</span>
+            </div>
+            <div class="cta-section">
+              
+                <div class="gift-info">
+                  <div class="gift-icon">🎁</div>
+                  <div class="gift-text">
+                    $200 qiymatga ega darslar to'plami qatnashchilarga sovg'a
+                    qilib beriladi.
+                  </div>
+                </div>
+  
+               
+              </div>
+
+            <ul class="features-list">
+              <li>
+                <div class="check-icon"></div>
+                <span
+                  >Dasturlashni 0 dan qisqa vaqtda o'rganish qadamlarini</span
+                >
+              </li>
+              <li>
+                <div class="check-icon"></div>
+                <span
+                  >Dasturlashda soha tanlash va daromadgacha chiqish
+                  qadamlarini</span
+                >
+              </li>
+              <li>
+                <div class="check-icon"></div>
+                <span>Birinchi 1000$ topish uslublarini o'rganasiz</span>
+              </li>
+            </ul>
+
+         
+          </div>
+
+          <div class="mentor-section"></div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="registrationModal">
+      <div class="modal-content">
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+        <h2 class="modal-title">
+          JOY BAND <span class="highlight">QILISH</span>
+        </h2>
+
+        <div class="alert" id="alertMessage"></div>
+
+        <form id="registrationForm">
+          <div class="form-group">
+            <label for="name">Ism (majburiy)</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Ismingizni kiriting"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefon raqami (majburiy)</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+998"
+              required
+            />
+          </div>
+
+          <button type="submit" class="submit-btn">YUBORISH</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      // Modal Functions
+      function openModal() {
+        document.getElementById("registrationModal").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        document.getElementById("registrationModal").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+
+      // Close modal when clicking outside
+      document
+        .getElementById("registrationModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeModal();
+          }
+        });
+
+      // Close modal on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeModal();
+        }
+      });
+
+      // Phone number formatting
+      document.getElementById("phone").addEventListener("input", function (e) {
+        let value = e.target.value.replace(/\D/g, "");
+        if (!value.startsWith("998")) {
+          value = "998" + value;
+        }
+        if (value.length > 12) {
+          value = value.slice(0, 12);
+        }
+        e.target.value = "+" + value;
+      });
+
+      // Form submission
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const phone = document.getElementById("phone").value.trim();
+          const alertDiv = document.getElementById("alertMessage");
+
+          // Validation
+          if (!name || name.length < 2) {
+            showAlert("Iltimos, to'g'ri ismingizni kiriting", "error");
+            return;
+          }
+
+          if (!phone || phone.length < 13) {
+            showAlert(
+              "Iltimos, to'g'ri telefon raqamingizni kiriting",
+              "error"
+            );
+            return;
+          }
+
+          // Simulate form submission
+          showAlert(
+            "Muvaffaqiyatli ro'yxatdan o'tdingiz! Tez orada siz bilan bog'lanamiz.",
+            "success"
+          );
+
+          // Reset form
+          setTimeout(() => {
+            document.getElementById("registrationForm").reset();
+            closeModal();
+          }, 2000);
+        });
+
+      function showAlert(message, type) {
+        const alertDiv = document.getElementById("alertMessage");
+        alertDiv.textContent = message;
+        alertDiv.className = `alert ${type}`;
+        alertDiv.style.display = "block";
+
+        setTimeout(() => {
+          alertDiv.style.display = "none";
+        }, 5000);
+      }
+
+      // Initialize phone field
+      document.getElementById("phone").value = "+998";
+    </script>
+  </body>
+</html>
