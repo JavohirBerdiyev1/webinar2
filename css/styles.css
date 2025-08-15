@@ -11,8 +11,12 @@
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     background-image: url("../img/bgall.jpg");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-height: 100vh;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   .container {
@@ -254,155 +258,11 @@
     border-radius: 30px;
   }
 
-  /* Modal */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    animation: fadeIn 0.3s ease;
-  }
 
-  .modal.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 
-  .modal-content {
-    background: linear-gradient(135deg, #fff, #f8f9fa);
-    padding: 40px;
-    border-radius: 25px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    animation: slideIn 0.3s ease;
-  }
 
-  .modal-title {
-    font-family: "Staatliches", sans-serif;
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
 
-  .modal-title .highlight {
-    color: #667eea;
-  }
 
-  .form-group {
-    margin-bottom: 25px;
-  }
-
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #333;
-  }
-
-  .form-group input {
-    width: 100%;
-    padding: 15px 20px;
-    border: 2px solid #e1e8ed;
-    border-radius: 12px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-  }
-
-  .form-group input:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-  }
-
-  .submit-btn {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    border: none;
-    padding: 18px 30px;
-    border-radius: 12px;
-    font-family: "Staatliches", sans-serif;
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    width: 100%;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .submit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-  }
-
-  .close-btn {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: #999;
-    transition: color 0.3s ease;
-  }
-
-  .close-btn:hover {
-    color: #333;
-  }
-
-  .alert {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    display: none;
-  }
-
-  .alert.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-  }
-
-  .alert.success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-  }
-
-  /* Animations */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideIn {
-    from {
-      opacity: 0;
-      transform: translateY(-50px) scale(0.9);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
 
   /* Responsive */
   @media (max-width: 768px) {
@@ -413,6 +273,7 @@
       background-repeat: no-repeat;
       background-position: -20px 102px;
     }
+    
     .content-wrapper {
       grid-template-columns: 1fr;
       gap: 40px;
@@ -426,11 +287,6 @@
     .mentor-section {
       height: 250px;
       order: -1;
-    }
-
-    .modal-content {
-      padding: 30px 25px;
-      margin: 20px;
     }
 
     .webinar-date {
@@ -470,10 +326,10 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   animation: modal-fade-in 0.3s ease;
+  will-change: opacity;
 }
 
-.modal-backdrop--open,
-.modal.active {
+.modal-backdrop--open {
   display: grid;
 }
 
@@ -487,9 +343,9 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
   animation: modal-slide-in 0.35s ease both;
+  will-change: transform, opacity;
 }
 
-.modal-title,
 .form-heading {
   font-family: "Staatliches", sans-serif;
   font-size: 30px;
@@ -500,17 +356,14 @@
   letter-spacing: 1px;
 }
 
-.modal-title .highlight,
 .form-heading span {
   color: #667eea;
 }
 
-.form-group,
 .form-label {
   margin-bottom: 28px;
 }
 
-.form-group label,
 .form-label span {
   display: block;
   margin-bottom: 10px;
@@ -519,7 +372,6 @@
   font-family: "Inter", sans-serif;
 }
 
-.form-group input,
 .form-label input {
   width: 100%;
   height: 52px;
@@ -531,14 +383,12 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-group input:focus,
 .form-label input:focus {
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
 }
 
-.submit-btn,
 .form-button {
   display: block;
   width: 100%;
@@ -575,7 +425,6 @@
   transform: none;
 }
 
-.close-btn,
 .form-close {
   position: absolute;
   top: 20px;
@@ -590,15 +439,12 @@
   transition: color 0.3s ease, opacity 0.2s ease;
 }
 
-.close-btn:hover,
 .form-close:hover,
-.close-btn:focus,
 .form-close:focus {
   color: #333;
   opacity: 0.85;
 }
 
-.alert,
 .form-alert {
   display: none;
   margin-bottom: 24px;
@@ -608,7 +454,6 @@
   font-size: 15px;
 }
 
-.alert.error,
 .form-alert.error {
   display: block;
   background: #f8d7da;
@@ -616,7 +461,6 @@
   border: 1px solid #f5c6cb;
 }
 
-.alert.success,
 .form-alert.success,
 .form-alert.open {
   display: block;
@@ -626,18 +470,14 @@
 }
 
 @keyframes modal-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes modal-slide-in {
   from {
     opacity: 0;
-    transform: translateY(-50px) scale(0.95);
+    transform: translateY(-30px) scale(0.98);
   }
   to {
     opacity: 1;
@@ -657,7 +497,7 @@
   .modal-content {
     padding: 24px 20px;
   }
-  .modal-title, .form-heading {
+  .form-heading {
     font-size: 24px;
     margin-bottom: 24px;
   }
@@ -668,7 +508,127 @@
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
-  .modal-content {
+  .modal-content,
+  .modal-backdrop {
     animation: none !important;
+  }
+}
+
+/* === THANKS MODAL STYLES === */
+.thanks-modal-backdrop {
+  z-index: 1001;
+}
+
+.thanks-modal-content {
+  text-align: center;
+  padding: 48px 40px;
+  max-width: 480px;
+}
+
+.thanks-modal-heading {
+  font-family: "Staatliches", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.thanks-modal-text {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thanks-modal-arrows {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.arrows-icon {
+  width: 60px;
+  height: auto;
+  opacity: 0.7;
+}
+
+.thanks-modal-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #0088cc, #0077b3);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-family: "Staatliches", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: none;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.thanks-modal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 136, 204, 0.4);
+  background: linear-gradient(135deg, #0099dd, #0088cc);
+}
+
+.thanks-modal-button:active {
+  transform: translateY(0);
+}
+
+.telegram-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+  .thanks-modal-content {
+    padding: 32px 24px;
+  }
+  
+  .thanks-modal-heading {
+    font-size: 24px;
+  }
+  
+  .thanks-modal-text {
+    font-size: 15px;
+  }
+  
+  .thanks-modal-button {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thanks-modal-content {
+    padding: 24px 20px;
+  }
+  
+  .thanks-modal-heading {
+    font-size: 22px;
+  }
+  
+  .thanks-modal-text {
+    font-size: 14px;
+  }
+  
+  .thanks-modal-button {
+    padding: 12px 24px;
+    font-size: 15px;
   }
 }
