@@ -3,19 +3,12 @@
 // DOM elementlarni bir marta olish
 const registerButtons = document.querySelectorAll(".webinar-main-button");
 const modalBackdrop = document.querySelector(".modal-backdrop");
-const thanksModalBackdrop = document.querySelector(".thanks-modal-backdrop");
 const modalCloserElements = document.querySelectorAll("[data-modal-close]");
 const form = document.querySelector(".form");
 
 // Modal yopish funksiyasi
 function closeModal() {
   modalBackdrop.classList.remove("modal-backdrop--open");
-  thanksModalBackdrop.classList.remove("modal-backdrop--open");
-}
-
-// Thanks modal ochish funksiyasi
-function openThanksModal() {
-  thanksModalBackdrop.classList.add("modal-backdrop--open");
 }
 
 // Event listener'lar
@@ -70,14 +63,18 @@ form.addEventListener("submit", async (e) => {
       body: gForm,
     });
 
-    // Form modalini yopish va thanks modalini ochish
+    // Form modalini yopish va final step pagega yo'naltirish
     closeModal();
-    setTimeout(openThanksModal, 300);
+    setTimeout(() => {
+      window.location.href = 'final-step.html';
+    }, 300);
     
   } catch (error) {
     console.error("Forma yuborishda xatolik:", error);
-    // Xatolik bo'lsa ham thanks modalini ochish
+    // Xatolik bo'lsa ham final step pagega yo'naltirish
     closeModal();
-    setTimeout(openThanksModal, 300);
+    setTimeout(() => {
+      window.location.href = 'final-step.html';
+    }, 300);
   }
 });

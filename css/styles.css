@@ -632,3 +632,130 @@
     font-size: 15px;
   }
 }
+
+/* === FINAL STEP PAGE STYLES === */
+/* Final step page background override */
+body.final-step-page {
+  background: #ffffff !important;
+}
+
+/* Final step page positioning */
+body.final-step-page {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.final-step-container {
+  text-align: center;
+  padding: 60px 40px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.final-step-heading {
+  font-family: "Staatliches", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.final-step-text {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-step-arrows {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.final-step-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  background: linear-gradient(135deg, #0088cc, #0077b3);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-family: "Staatliches", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(0, 136, 204, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease;
+  border: none;
+  cursor: pointer;
+  will-change: transform;
+  margin-bottom: 40px;
+}
+
+.final-step-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 136, 204, 0.4);
+  background: linear-gradient(135deg, #0099dd, #0088cc);
+}
+
+.final-step-button:active {
+  transform: translateY(0);
+}
+
+.final-step-info {
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  .final-step-container {
+    padding: 40px 24px;
+    margin: 20px;
+  }
+  
+  .final-step-heading {
+    font-size: 28px;
+  }
+  
+  .final-step-text {
+    font-size: 16px;
+  }
+  
+  .final-step-button {
+    padding: 16px 32px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .final-step-container {
+    padding: 30px 20px;
+    margin: 15px;
+  }
+  
+  .final-step-heading {
+    font-size: 24px;
+  }
+  
+  .final-step-text {
+    font-size: 15px;
+  }
+  
+  .final-step-button {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+}
