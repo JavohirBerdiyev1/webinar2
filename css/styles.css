@@ -639,13 +639,6 @@ body.final-step-page {
   background: #ffffff !important;
 }
 
-/* Final step page positioning */
-body.final-step-page {
-  display: flex;
-  justify-content: center;
-  padding-top: 50px;
-}
-
 .final-step-container {
   text-align: center;
   padding: 60px 40px;

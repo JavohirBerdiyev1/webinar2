@@ -30,20 +30,12 @@
   <link rel="icon" type="image/x-icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>" />
 
-  <!-- Fonts - Optimized loading -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Staatliches:wght@400&display=swap"
-    rel="stylesheet" />
+  <!-- Fonts removed for performance: using system fonts -->
 
   <!-- Critical CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Preload critical images -->
-  <link rel="preload" href="img/bgall.jpg" as="image" />
-  <link rel="preload" href="img/arrows.svg" as="image" />
-  <link rel="preload" href="img/telegram.svg" as="image" />
+  <!-- Image preloads removed to reduce initial network work -->
   
   <!-- Meta Pixel Code -->
   <script>
@@ -75,12 +67,12 @@
     </p>
 
     <div class="final-step-arrows">
-      <img src="img/arrows.svg" alt="Tugma tomon" class="arrows-icon">
+      <img src="img/arrows.svg" alt="Tugma tomon" class="arrows-icon" loading="lazy">
     </div>
 
     <a href="https://t.me/noldandasturlash" class="final-step-button" target="_blank" rel="noopener">
       <span>OBUNA BO'LISH</span>
-      <img src="img/telegram.svg" alt="Telegram" class="telegram-icon">
+      <img src="img/telegram.svg" alt="Telegram" class="telegram-icon" loading="lazy">
     </a>
 
     <div class="final-step-info">
